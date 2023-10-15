@@ -33,7 +33,7 @@ export default {
   mutations: {
     setProducts(state, products) {
       //update products
-      state.products = products;
+      state.items = products;
     },
 
     decrementProductInventory(state, product) {

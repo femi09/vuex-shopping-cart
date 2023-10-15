@@ -29,10 +29,10 @@ export default {
   },
 
   actions: {
-    addProductToCart(context, product, rootGetters) {
-      if (rootGetters['products/productIsInStock'](product)) {
+    addProductToCart(context, product) {
+      if (context.rootGetters['product/productIsInStock'](product)) {
         // find cartItem
-        const cartItem = context.state.cart.find(
+        const cartItem = context.state.items.find(
           (item) => item.id == product.id
         );
         if (!cartItem) {
@@ -60,7 +60,7 @@ export default {
 
   mutations: {
     pushProductToCart(state, productId) {
-      state.cart.push({
+      state.items.push({
         id: productId,
         quantity: 1,
       });
@@ -71,7 +71,7 @@ export default {
     },
 
     emptyCart(state) {
-      state.cart = [];
+      state.items = [];
     },
 
     incrementItemQuantity(state, cartItem) {

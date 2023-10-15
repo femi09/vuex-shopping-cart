@@ -33,7 +33,7 @@ export default {
 
   methods: {
     // you can always pass an object or an array into the helpers
-    ...mapActions(["checkout"]),
+    ...mapActions('cart', ["checkout"]),
   },
 };
 </script>

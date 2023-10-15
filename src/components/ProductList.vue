@@ -33,12 +33,12 @@ export default {
     }),
 
     ...mapGetters('product', {
-        productIsInStock: 'productInStock'
+        productIsInStock: 'productIsInStock'
     }),
 
-    productIsInStock() {
-      return this.$store.getters.productIsInStock;
-    },
+    // productIsInStock() {
+    //   return this.$store.getters.productIsInStock;
+    // },
   },
   created() {
     this.loading = true;
